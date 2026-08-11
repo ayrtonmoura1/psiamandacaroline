@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psicóloga Amanda Caroline | Neuropsicóloga e Psicoterapeuta</title>
+  <meta name="description" content="Psicóloga Amanda Caroline — Neuropsicóloga e psicoterapeuta para crianças, adolescentes e mulheres. Atendimento acolhedor em Campo Grande/MS. Agende sua consulta." />
+  <meta name="keywords" content="psicóloga, neuropsicóloga, psicoterapia, crianças, adolescentes, mulheres, puerpério, avaliação neuropsicológica, Campo Grande, MS" />
+  <meta property="og:title" content="Psicóloga Amanda Caroline | Neuropsicóloga e Psicoterapeuta" />
+  <meta property="og:description" content="Neuropsicóloga e psicoterapeuta para crianças, adolescentes e mulheres. Atendimento acolhedor em Campo Grande/MS." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ======= NAVEGAÇÃO ======= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__brand" aria-label="Início">
+        <span class="nav__logo">A</span>
+        <span class="nav__brand-text">
+          <strong>Amanda Caroline</strong>
+          <small>Psicóloga &middot; Neuropsicóloga</small>
+        </span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="navMenu" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Especialidades</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn--pequeno btn--creme" href="#" id="navAgendar">Agendar consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======= HERO ======= -->
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__texto">
+          <span class="hero__selo reveal">Psicologia Clínica &middot; <strong id="heroCrp"></strong></span>
+          <h1 class="hero__titulo reveal">Amanda<br /><em>Caroline</em></h1>
+          <p class="hero__subtitulo reveal" id="heroSub"></p>
+          <p class="hero__descricao reveal" id="heroDesc"></p>
+          <div class="hero__acoes reveal">
+            <a class="btn btn--primario" href="#" id="ctaAgendar">Agendar consulta</a>
+            <a class="btn btn--contorno" href="#servicos">Conhecer especialidades</a>
+          </div>
+          <ul class="hero__chips reveal" id="heroChips"></ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__moldura">
+            <div class="hero__circulo" id="heroFoto"></div>
+            <svg class="hero__decor hero__decor--1" viewBox="0 0 200 200" aria-hidden="true">
+              <path fill="none" stroke="var(--terracota)" stroke-width="3" d="M100,10 C 150,40 150,160 100,190 C 50,160 50,40 100,10 Z" />
+            </svg>
+            <svg class="hero__decor hero__decor--2" viewBox="0 0 200 200" aria-hidden="true">
+              <circle fill="var(--verde-claro)" cx="100" cy="100" r="98" />
+            </svg>
+            <div class="hero__card hero__card--1">
+              <span class="hero__card-icone">🧠</span>
+              <div><strong>Neuropsicologia</strong><small>avaliação &amp; reabilitação</small></div>
+            </div>
+            <div class="hero__card hero__card--2">
+              <span class="hero__card-icone">🤍</span>
+              <div><strong>Saúde mental materna</strong><small>puerpério &amp; maternidade</small></div>
+            </div>
+            <div class="hero__card hero__card--3">
+              <span class="hero__card-icone">🌱</span>
+              <div><strong>Infância &amp; adolescência</strong><small>psicoterapia</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= DESTAQUES ======= -->
+    <section class="destaques" aria-label="Destaques">
+      <div class="container destaques__grid" id="destaques"></div>
+    </section>
+
+    <!-- ======= SOBRE ======= -->
+    <section class="sobre section" id="sobre">
+      <div class="container sobre__grid">
+        <div class="sobre__foto reveal">
+          <div class="sobre__img-wrap">
+            <img id="sobreFoto" src="conteudo/fotos/perfil.jpg" alt="Foto da Psicóloga Amanda Caroline" />
+            <div class="sobre__selo">CRP <strong id="sobreCrp"></strong></div>
+          </div>
+        </div>
+        <div class="sobre__texto">
+          <span class="tag reveal">Sobre</span>
+          <h2 class="section__titulo reveal">Um cuidado que acolhe<br /><em>pessoas e histórias</em></h2>
+          <div class="sobre__paragrafos reveal" id="sobreParagrafos"></div>
+          <div class="sobre__equipe reveal" id="sobreEquipe"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= ESPECIALIDADES ======= -->
+    <section class="servicos section" id="servicos">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Especialidades</span>
+          <h2 class="section__titulo reveal">Como posso <em>ajudar você</em></h2>
+          <p class="section__lead reveal" id="servicosLead"></p>
+        </div>
+        <div class="servicos__grid" id="servicosGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======= COMO FUNCIONA ======= -->
+    <section class="como section" id="como-funciona">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Como funciona</span>
+          <h2 class="section__titulo reveal">O caminho do <em>atendimento</em></h2>
+        </div>
+        <div class="como__grid" id="comoGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======= VALORES / ABORDAGEM ======= -->
+    <section class="valores section">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Abordagem</span>
+          <h2 class="section__titulo reveal">Princípios que guiam <em>meu trabalho</em></h2>
+        </div>
+        <div class="valores__grid" id="valoresGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======= CONTEÚDOS ======= -->
+    <section class="conteudos section" id="conteudos">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Conteúdos</span>
+          <h2 class="section__titulo reveal">Reflexões no <em>Instagram</em></h2>
+          <p class="section__lead reveal" id="conteudosLead"></p>
+        </div>
+        <div class="conteudos__grid" id="conteudosGrid"></div>
+        <div class="conteudos__acoes reveal">
+          <a class="btn btn--primario" href="#" id="linkInstagram">Seguir no Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= DEPOIMENTOS ======= -->
+    <section class="depoimentos section" id="depoimentos">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Depoimentos</span>
+          <h2 class="section__titulo reveal">Quem passou, <em>recomenda</em></h2>
+        </div>
+        <div class="depoimentos__grid" id="depoimentosGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======= FAQ ======= -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Dúvidas frequentes</span>
+          <h2 class="section__titulo reveal">Perguntas <em>frequentes</em></h2>
+        </div>
+        <div class="faq__lista" id="faqLista"></div>
+      </div>
+    </section>
+
+    <!-- ======= CONTATO ======= -->
+    <section class="contato section" id="contato">
+      <div class="container">
+        <div class="section__cabecalho">
+          <span class="tag reveal">Contato</span>
+          <h2 class="section__titulo reveal">Vamos conversar?<br /><em>Agende seu atendimento</em></h2>
+          <p class="section__lead reveal" id="contatoLead"></p>
+        </div>
+        <div class="contato__grid">
+          <div class="contato__cartoes reveal" id="contatoCartoes"></div>
+          <div class="contato__mapa reveal">
+            <iframe
+              id="mapaFrame"
+              title="Localização do consultório"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src=""></iframe>
+            <div class="contato__mapa-fallback" id="mapaFallback">
+              <span class="contato__mapa-icone">📍</span>
+              <strong>Consultório em Campo Grande – MS</strong>
+              <p>Toque no botão para abrir a localização no Google Maps.</p>
+              <a class="btn btn--primario" href="#" id="linkMaps">Abrir no Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= RODAPÉ ======= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">A</span>
+        <div>
+          <strong>Amanda Caroline</strong>
+          <p>Psicóloga Clínica &middot; Neuropsicóloga</p>
+          <p class="footer__crp" id="footerCrp"></p>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Especialidades</a>
+        <a href="#conteudos">Conteúdos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="footer__social" id="footerSocial"></div>
+    </div>
+    <div class="container footer__base">
+      <p id="footerBase"></p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a class="whatsapp-float" href="#" id="whatsappFloat" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.7 3.6 1.1 5.7 1.1 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.8 0-3.5-.5-5-1.3l-.4-.2-4.9 1 1-4.8-.3-.4C5.5 18.1 5 16.6 5 15c0-5.5 4.5-10 11-10s11 4.5 11 10-4.5 10-11 10zm6.1-6.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.2-.2-.5-.4z"/>
+    </svg>
+  </a>
+
+  <script src="js/conteudo.js"></script>
+  <script src="js/galeria_importada.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
