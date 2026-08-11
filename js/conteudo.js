@@ -46,8 +46,8 @@ const CONTEUDO = {
   /* -------- Foto de perfil / retrato --------
      Coloque uma foto profissional em conteudo/fotos/ (ex.: sobre.jpg)
      e troque o caminho abaixo. */
-  fotoPerfil: "conteudo/fotos/perfil.jpg",
-  fotoSobre: "conteudo/fotos/perfil.jpg",
+  fotoPerfil: "conteudo/fotos/perfil.jpeg",
+  fotoSobre: "conteudo/fotos/perfil.jpeg",
 
   /* -------- Destaques (faixa sob o hero) -------- */
   destaques: [
