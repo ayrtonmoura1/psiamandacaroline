@@ -22,7 +22,47 @@
   --fonte-texto: "Inter", system-ui, sans-serif;
 }
 
+/* Cores oficiais das marcas — usadas só nos links dos perfis */
+:root {
+  --whatsapp: #25d366;
+  --instagram: #e4405f;
+  --linkedin: #0a66c2;
+  --googlemaps: #1a73e8;
+  --foco: #a84f33;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ---------- Ícones (sprite SVG) ---------- */
+.ico {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+  vertical-align: -0.22em;
+  pointer-events: none;
+}
+
+/* ---------- Acessibilidade ---------- */
+/* Todo elemento navegável pelo teclado precisa de um contorno visível. */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.pular-link {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -120%);
+  z-index: 200;
+  background: var(--verde);
+  color: var(--creme);
+  padding: 12px 22px;
+  border-radius: 0 0 12px 12px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+.pular-link:focus { transform: translate(-50%, 0); }
 
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 
@@ -142,6 +182,9 @@ ul { list-style: none; }
   transition: width 0.25s ease;
 }
 .nav__menu > a:not(.btn):hover::after { width: 100%; }
+/* Seção que está sendo lida no momento */
+.nav__menu > a:not(.btn).ativo { color: var(--verde); font-weight: 600; }
+.nav__menu > a:not(.btn).ativo::after { width: 100%; }
 
 .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav__toggle span { width: 26px; height: 2.5px; border-radius: 3px; background: var(--verde-escuro); transition: 0.25s ease; }
@@ -194,14 +237,18 @@ ul { list-style: none; }
 
 .hero__chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .hero__chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--verde);
   background: var(--branco);
   border: 1px solid var(--borda);
-  padding: 8px 14px;
+  padding: 8px 15px;
   border-radius: 999px;
 }
+.hero__chips .ico { width: 17px; height: 17px; vertical-align: 0; color: var(--terracota-escuro); }
 
 /* Visual do hero */
 .hero__visual { position: relative; display: flex; justify-content: center; }
@@ -258,13 +305,14 @@ ul { list-style: none; }
 }
 .destaque:hover { transform: translateY(-5px); box-shadow: var(--sombra); }
 .destaque__icone {
-  width: 44px; height: 44px;
+  width: 46px; height: 46px;
   display: grid; place-items: center;
   border-radius: 14px;
   background: var(--verde-claro);
-  font-size: 1.25rem;
+  color: var(--verde);
   margin-bottom: 14px;
 }
+.destaque__icone .ico { width: 24px; height: 24px; vertical-align: 0; }
 .destaque h3,
 .destaque strong {
   display: block;
@@ -307,6 +355,7 @@ ul { list-style: none; }
 .sobre__paragrafos p { color: var(--texto-suave); margin-bottom: 16px; }
 .sobre__equipe { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
 .sobre__equipe a {
+  display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.88rem; font-weight: 600;
   color: var(--verde);
   background: var(--verde-claro);
@@ -316,6 +365,7 @@ ul { list-style: none; }
   transition: 0.2s ease;
 }
 .sobre__equipe a:hover { background: var(--verde); color: var(--branco); }
+.sobre__equipe .ico { width: 17px; height: 17px; vertical-align: 0; }
 
 /* ---------- Serviços ---------- */
 .servicos { background: var(--verde-claro-2); }
@@ -331,6 +381,9 @@ ul { list-style: none; }
   padding: 30px 26px;
   position: relative;
   overflow: hidden;
+  /* coluna para que o CTA fique alinhado na base de todos os cards */
+  display: flex;
+  flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .servico:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
@@ -345,23 +398,41 @@ ul { list-style: none; }
 .servico__icone {
   width: 56px; height: 56px;
   display: grid; place-items: center;
-  font-size: 1.6rem;
   background: var(--verde-claro);
+  color: var(--verde);
   border-radius: 16px;
   margin-bottom: 18px;
+  transition: background 0.25s ease, color 0.25s ease;
 }
+.servico__icone .ico { width: 28px; height: 28px; vertical-align: 0; }
+.servico:hover .servico__icone { background: var(--verde); color: var(--branco); }
 .servico h3 { font-family: var(--fonte-titulo); font-size: 1.3rem; color: var(--verde-escuro); margin-bottom: 10px; }
 .servico p { color: var(--texto-suave); font-size: 0.95rem; margin-bottom: 16px; }
+.servico ul { margin-bottom: 4px; }
 .servico ul li {
   font-size: 0.88rem; color: var(--texto-suave);
   padding: 5px 0 5px 22px; position: relative;
 }
 .servico ul li::before {
-  content: "✦";
-  position: absolute; left: 2px;
-  color: var(--terracota);
+  content: "";
+  position: absolute; left: 4px; top: 13px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--terracota);
 }
-.servico__cta { display: inline-block; margin-top: 16px; font-size: 0.9rem; font-weight: 600; color: var(--verde); }
+.servico__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--verde);
+}
+.servico__cta .ico { width: 16px; height: 16px; vertical-align: 0; transition: transform 0.2s ease; }
+.servico__cta:hover .ico { transform: translateX(3px); }
 .servico__cta:hover { color: var(--terracota-escuro); }
 
 /* ---------- Como funciona ---------- */
@@ -404,7 +475,8 @@ ul { list-style: none; }
   transition: background 0.25s ease;
 }
 .valor:hover { background: rgba(255, 255, 255, 0.12); }
-.valor__icone { font-size: 1.8rem; margin-bottom: 12px; }
+.valor__icone { margin-bottom: 12px; color: var(--terracota); }
+.valor__icone .ico { width: 28px; height: 28px; vertical-align: 0; }
 .valor h3 { font-family: var(--fonte-titulo); font-size: 1.15rem; margin-bottom: 8px; }
 .valor p { font-size: 0.9rem; color: rgba(250, 246, 240, 0.8); }
 
@@ -457,27 +529,37 @@ ul { list-style: none; }
   overflow: hidden;
   transition: box-shadow 0.25s ease;
 }
-.faq__item.aberto { box-shadow: var(--sombra); }
+.faq__item[open] { box-shadow: var(--sombra); }
+/* <summary> nativo: funciona sem JavaScript e já é acessível por teclado */
 .faq__pergunta {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 18px 22px;
-  background: none;
-  border: 0;
-  font-family: var(--fonte-texto);
   font-size: 1rem;
   font-weight: 600;
   color: var(--verde-escuro);
   cursor: pointer;
-  text-align: left;
+  list-style: none;
 }
-.faq__icone { color: var(--terracota); font-size: 1.2rem; transition: transform 0.25s ease; flex: none; }
-.faq__item.aberto .faq__icone { transform: rotate(45deg); }
-.faq__resposta { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq__pergunta::-webkit-details-marker { display: none; }
+.faq__pergunta:hover { color: var(--verde); }
+.faq__icone {
+  width: 20px; height: 20px;
+  color: var(--terracota);
+  transition: transform 0.25s ease;
+  transform: rotate(90deg);
+  vertical-align: 0;
+}
+.faq__item[open] .faq__icone { transform: rotate(-90deg); }
 .faq__resposta p { padding: 0 22px 20px; color: var(--texto-suave); font-size: 0.95rem; }
+.faq__item[open] .faq__resposta { animation: faq-abre 0.28s ease; }
+@keyframes faq-abre { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .faq__icone { transition: none; }
+  .faq__item[open] .faq__resposta { animation: none; }
+}
 
 /* ---------- Contato ---------- */
 .contato { background: var(--verde-claro-2); }
@@ -503,8 +585,14 @@ ul { list-style: none; }
   display: grid; place-items: center;
   border-radius: 14px;
   background: var(--verde-claro);
-  font-size: 1.3rem;
+  color: var(--verde);
 }
+.contato__cartao-icone .ico { width: 24px; height: 24px; vertical-align: 0; }
+/* Cada perfil recebe a cor oficial da sua marca */
+.contato__cartao--whatsapp   { background: rgba(37, 211, 102, 0.14); color: #128c4b; }
+.contato__cartao--instagram  { background: rgba(228, 64, 95, 0.12);  color: var(--instagram); }
+.contato__cartao--linkedin   { background: rgba(10, 102, 194, 0.12); color: var(--linkedin); }
+.contato__cartao--googlemaps { background: rgba(26, 115, 232, 0.12); color: var(--googlemaps); }
 .contato__cartao strong { color: var(--verde-escuro); font-size: 0.98rem; display: block; }
 .contato__cartao span { color: var(--texto-suave); font-size: 0.88rem; }
 
@@ -530,7 +618,8 @@ ul { list-style: none; }
 }
 .contato__mapa-fallback strong { font-family: var(--fonte-titulo); font-size: 1.2rem; color: var(--verde-escuro); }
 .contato__mapa-fallback p { color: var(--texto-suave); max-width: 300px; font-size: 0.92rem; }
-.contato__mapa-icone { font-size: 2.6rem; }
+.contato__mapa-icone { color: var(--terracota); }
+.contato__mapa-icone .ico { width: 38px; height: 38px; vertical-align: 0; }
 
 /* ---------- Rodapé ---------- */
 .footer { background: var(--verde-escuro); color: rgba(250, 246, 240, 0.85); padding: 56px 0 26px; }
@@ -557,10 +646,16 @@ ul { list-style: none; }
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 1.05rem;
-  transition: background 0.2s ease;
+  color: var(--creme);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
-.footer__social a:hover { background: var(--terracota); }
+.footer__social .ico { width: 19px; height: 19px; vertical-align: 0; }
+.footer__social a:hover { transform: translateY(-2px); color: #fff; }
+/* Hover na cor oficial da marca */
+.footer__social a:nth-child(1):hover,
+.footer__social a:nth-child(2):hover { background: var(--instagram); }
+.footer__social a:nth-child(3):hover { background: var(--linkedin); }
+.footer__social a:nth-child(4):hover { background: var(--googlemaps); }
 .footer__base { padding-top: 24px; font-size: 0.82rem; color: rgba(250, 246, 240, 0.55); text-align: center; }
 
 /* ---------- WhatsApp flutuante ---------- */
@@ -577,6 +672,103 @@ ul { list-style: none; }
   transition: transform 0.2s ease;
 }
 .whatsapp-float:hover { transform: scale(1.08); }
+.whatsapp-float .ico { width: 28px; height: 28px; vertical-align: 0; }
+
+/* ---------- Quando buscar ajuda ---------- */
+.sinais { background: var(--branco); }
+.sinais__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.sinal {
+  background: var(--creme);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 30px 26px;
+}
+.sinal__icone {
+  width: 50px; height: 50px;
+  display: grid; place-items: center;
+  border-radius: 15px;
+  background: var(--verde-claro);
+  color: var(--verde);
+  margin-bottom: 16px;
+}
+.sinal__icone .ico { width: 26px; height: 26px; vertical-align: 0; }
+.sinal h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--verde-escuro);
+  margin-bottom: 14px;
+}
+.sinal ul { display: grid; gap: 10px; }
+.sinal li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+.sinal li .ico {
+  width: 17px; height: 17px;
+  margin-top: 3px;
+  color: var(--terracota);
+  vertical-align: 0;
+}
+.sinais__cta { text-align: center; margin-top: 40px; }
+
+/* ---------- CTAs de seção ---------- */
+.sobre__cta { margin-top: 26px; }
+.como__cta { text-align: center; margin-top: 44px; }
+.como__cta p { color: var(--texto-suave); margin-bottom: 16px; }
+
+/* ---------- Barra de ação fixa no celular ---------- */
+.acao-movel { display: none; }
+@media (max-width: 700px) {
+  .whatsapp-float { display: none; }
+  .acao-movel {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 95;
+    display: flex;
+    gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--borda);
+    box-shadow: 0 -10px 30px -18px rgba(21, 56, 48, 0.5);
+  }
+  .acao-movel__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .acao-movel__btn--principal { flex: 1; background: #128c4b; color: #fff; }
+  .acao-movel__btn--secundario {
+    padding: 0 20px;
+    background: var(--verde-claro);
+    color: var(--verde);
+    border: 1px solid rgba(31, 78, 69, 0.2);
+  }
+  /* espaço para a barra não cobrir o fim da página */
+  body { padding-bottom: 76px; }
+}
+
+/* ---------- Aviso do rodapé ---------- */
+.footer__aviso {
+  margin-top: 26px;
+  padding: 18px 22px;
+  border: 1px solid rgba(250, 246, 240, 0.18);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.16);
+}
+.footer__aviso p { font-size: 0.85rem; line-height: 1.6; color: rgba(250, 246, 240, 0.8); }
+.footer__aviso strong { color: var(--creme); }
+.footer__aviso a { color: var(--terracota); font-weight: 600; text-decoration: underline; }
 
 /* ---------- Animação de entrada ---------- */
 /* A classe `js` é adicionada no <head> quando o JavaScript está ativo.
@@ -597,6 +789,7 @@ ul { list-style: none; }
   .atuacao__grid, .como__grid, .valores__grid { grid-template-columns: repeat(2, 1fr); }
   .conteudos__grid { grid-template-columns: repeat(2, 1fr); }
   .depoimentos__grid { grid-template-columns: 1fr; }
+  .sinais__grid { grid-template-columns: 1fr; }
   .contato__grid { grid-template-columns: 1fr; }
 
   .nav__toggle { display: flex; }
@@ -620,5 +813,5 @@ ul { list-style: none; }
 
 @media (max-width: 560px) {
   .section { padding: 68px 0; }
-  .servicos__grid, .atuacao__grid, .como__grid, .valores__grid, .conteudos__grid { grid-template-columns: 1fr; }
+  .servicos__grid, .atuacao__grid, .como__grid, .valores__grid, .conteudos__grid, .sinais__grid { grid-template-columns: 1fr; }
 }

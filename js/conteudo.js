@@ -33,11 +33,13 @@ const CONTEUDO = {
     "Acolhimento, escuta e cuidado baseado em evidências para crianças, adolescentes e mulheres em diferentes fases da vida — incluindo a maternidade e o puerpério. Atendimento em Campo Grande – MS.",
 
   // Pequenos selos exibidos no hero
+  // Os ícones são nomes do sprite SVG definido no início do index.html
+  // (ex.: "cerebro", "broto", "bebe", "formatura", "instagram"...).
   chips: [
-    "🧠 Avaliação neuropsicológica",
-    "🌱 Psicoterapia infantojuvenil",
-    "🤍 Psicoterapia para mulheres",
-    "👶 Saúde mental materna"
+    { icone: "cerebro", texto: "Avaliação neuropsicológica" },
+    { icone: "broto", texto: "Psicoterapia infantojuvenil" },
+    { icone: "coracao-maos", texto: "Psicoterapia para mulheres" },
+    { icone: "bebe", texto: "Saúde mental materna" }
   ],
 
   /* -------- Contato -------- */
@@ -63,22 +65,22 @@ const CONTEUDO = {
      bloco <section id="atuacao"> do index.html. */
   destaques: [
     {
-      icone: "🧠",
+      icone: "cerebro",
       titulo: "Neuropsicologia",
       texto: "Avaliação neuropsicológica e reabilitação cognitiva para crianças, adolescentes e adultos — atenção, memória, funções executivas e aprendizagem."
     },
     {
-      icone: "🌱",
+      icone: "broto",
       titulo: "Infância e adolescência",
       texto: "Psicoterapia infantil e de adolescentes, com orientação aos pais e cuidadores em questões emocionais, escolares e de comportamento."
     },
     {
-      icone: "🤍",
+      icone: "bebe",
       titulo: "Saúde mental materna",
       texto: "Cuidado com gestantes e mães no puerpério e na maternidade atípica, incluindo ansiedade e depressão pós-parto."
     },
     {
-      icone: "🎓",
+      icone: "formatura",
       titulo: "Psicologia escolar",
       texto: "Orientação a famílias e escolas sobre desenvolvimento e aprendizagem, além de palestras e formação para educadores."
     }
@@ -93,8 +95,8 @@ const CONTEUDO = {
 
   // Links adicionais na seção Sobre (equipe / redes)
   sobreLinks: [
-    { texto: "🤍 Equipe @amare.infantil", url: "https://www.instagram.com/amare.infantil/" },
-    { texto: "📚 Psicologia Escolar (Instagram)", url: "https://www.instagram.com/psiconaescola/" }
+    { icone: "instagram", texto: "Equipe @amare.infantil", url: "https://www.instagram.com/amare.infantil/" },
+    { icone: "instagram", texto: "Psicologia Escolar (Instagram)", url: "https://www.instagram.com/psiconaescola/" }
   ],
 
   /* -------- Especialidades / Serviços -------- */
@@ -103,42 +105,42 @@ const CONTEUDO = {
 
   servicos: [
     {
-      icone: "🧠",
+      icone: "cerebro",
       titulo: "Avaliação Neuropsicológica",
       descricao:
         "Compreensão do funcionamento cognitivo e emocional (atenção, memória, funções executivas, aprendizagem), auxiliando em diagnósticos e orientações para a família e a escola.",
       itens: ["Investigações de dificuldades de aprendizagem", "Auxílio em diagnósticos (TDAH, TEA e outros)", "Devolutiva acolhedora e relatório"]
     },
     {
-      icone: "🌱",
+      icone: "broto",
       titulo: "Psicoterapia Infantil e Adolescente",
       descricao:
         "Um espaço seguro para a criança e o adolescente se expressarem e se desenvolverem emocionalmente, com a participação e orientação dos cuidadores.",
       itens: ["Ansiedade, medos e inseguranças", "Dificuldades escolares e comportamentais", "Apoio aos pais e cuidadores"]
     },
     {
-      icone: "🤍",
+      icone: "coracao-maos",
       titulo: "Psicoterapia para Mulheres",
       descricao:
         "Escuta e acolhimento para mulheres em diferentes fases da vida: saúde emocional, relações, autoestima, transições e projetos de vida.",
       itens: ["Ansiedade, depressão e estresse", "Autoconhecimento e autoestima", "Relações e fases de transição"]
     },
     {
-      icone: "👶",
+      icone: "bebe",
       titulo: "Saúde Mental Materna",
       descricao:
         "O puerpério é considerado o 4º trimestre da gestação — um período de intensas emoções e transformações. Mães também merecem cuidado e acolhimento.",
       itens: ["Acolhimento no puerpério", "Transtornos perinatais (ansiedade e depressão)", "Maternidade atípica — mães de crianças com deficiência"]
     },
     {
-      icone: "🎓",
+      icone: "formatura",
       titulo: "Psicologia Escolar e Educacional",
       descricao:
         "Orientação a famílias e escolas sobre desenvolvimento, aprendizagem e comportamento, apoiando uma trajetória escolar mais saudável e feliz.",
       itens: ["Dificuldades de aprendizagem (ex.: discalculia)", "Orientação a pais e professores", "Intervenção junto à escola"]
     },
     {
-      icone: "💬",
+      icone: "pessoas",
       titulo: "Supervisão e Palestras",
       descricao:
         "Supervisão para profissionais da psicologia e palestras sobre educação, desenvolvimento infantil e saúde mental para escolas e empresas.",
@@ -156,10 +158,10 @@ const CONTEUDO = {
 
   /* -------- Valores / abordagem -------- */
   valores: [
-    { icone: "🤝", titulo: "Acolhimento", texto: "Um espaço seguro para ser ouvida(o) sem julgamentos." },
-    { icone: "⚖️", titulo: "Ética e sigilo", texto: "Condução ética e confidencial em todas as etapas." },
-    { icone: "🔬", titulo: "Base em evidências", texto: "Prática fundamentada na ciência e na experiência clínica." },
-    { icone: "🌿", titulo: "Olhar integral", texto: "Cuidado com a pessoa e com quem cuida dela." }
+    { icone: "aperto-maos", titulo: "Acolhimento", texto: "Um espaço seguro para ser ouvida(o) sem julgamentos." },
+    { icone: "balanca", titulo: "Ética e sigilo", texto: "Condução ética e confidencial em todas as etapas." },
+    { icone: "microscopio", titulo: "Base em evidências", texto: "Prática fundamentada na ciência e na experiência clínica." },
+    { icone: "folha", titulo: "Olhar integral", texto: "Cuidado com a pessoa e com quem cuida dela." }
   ],
 
   /* -------- Conteúdos / Instagram (galeria) --------
@@ -195,34 +197,19 @@ const CONTEUDO = {
   ],
 
   /* -------- Depoimentos --------
-     💡 Substitua pelos depoimentos reais de pacientes.
-     As entradas atuais são apenas exemplos/placeholders. */
-  depoimentos: [
-    {
-      estrelas: "★★★★★",
-      texto: "“Espaço aqui para o depoimento real de uma paciente sobre o atendimento.”",
-      autor: "Nome da paciente",
-      detalhe: "Psicoterapia para mulheres"
-    },
-    {
-      estrelas: "★★★★★",
-      texto: "“Espaço aqui para o depoimento real de uma mãe ou cuidadora.”",
-      autor: "Nome da mãe",
-      detalhe: "Atendimento infantojuvenil"
-    },
-    {
-      estrelas: "★★★★★",
-      texto: "“Espaço aqui para o depoimento real sobre a avaliação neuropsicológica.”",
-      autor: "Nome do familiar",
-      detalhe: "Avaliação neuropsicológica"
-    }
-  ],
+     A seção de depoimentos foi retirada da página: estava publicada só
+     com textos de exemplo ("Nome da paciente"). Antes de reativá-la,
+     confirme com o CRP-14 se a divulgação de depoimentos de pacientes é
+     permitida — as normas de publicidade do CFP restringem essa prática.
+     Se for liberada, basta preencher a lista abaixo e recolocar no
+     index.html a <section> com <div id="depoimentosGrid"></div>. */
+  depoimentos: [],
 
   /* -------- Dúvidas frequentes -------- */
   faq: [
     {
       pergunta: "Como agendar um atendimento?",
-      resposta: "É simples: envie uma mensagem pelo WhatsApp (botão flutuante ou na seção de contato) contando um pouco do seu momento. Em seguida, alinhamos o melhor dia e horário para você."
+      resposta: "É simples: envie uma mensagem pelo WhatsApp — pelo botão de agendamento ou pela seção de contato — contando um pouco do seu momento. Em seguida, alinhamos o melhor dia e horário para você."
     },
     {
       pergunta: "A partir de qual idade as crianças são atendidas?",
@@ -252,35 +239,35 @@ const CONTEUDO = {
 
   contatoCartoes: [
     {
-      icone: "💬",
+      icone: "whatsapp",
       titulo: "WhatsApp",
       valor: "+55 67 99255-6307",
       dica: "Agendamentos, supervisões e palestras",
       link: "https://wa.me/5567992556307"
     },
     {
-      icone: "📸",
+      icone: "instagram",
       titulo: "Instagram — Clínica",
       valor: "@amandacarolinepsi",
       dica: "Neuropsicologia e psicoterapia",
       link: "https://www.instagram.com/amandacarolinepsi/"
     },
     {
-      icone: "🎓",
+      icone: "instagram",
       titulo: "Instagram — Psicologia Escolar",
       valor: "@psiconaescola",
       dica: "Educação e psicologia escolar",
       link: "https://www.instagram.com/psiconaescola/"
     },
     {
-      icone: "💼",
+      icone: "linkedin",
       titulo: "LinkedIn",
       valor: "Amanda Caroline",
       dica: "Perfil profissional",
       link: "https://www.linkedin.com/in/psiamandacaroline/"
     },
     {
-      icone: "📍",
+      icone: "googlemaps",
       titulo: "Consultório",
       valor: "Campo Grande – MS",
       dica: "Psicóloga Clínica de Crianças e Adolescentes",
