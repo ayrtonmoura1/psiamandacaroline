@@ -1,0 +1,86 @@
+# ============================================================
+# robots.txt — Psicóloga Amanda Caroline
+# Libera explicitamente buscadores e bots de IA a lerem o site.
+#
+# ⚠️ Observação para o GitHub Pages: em sites de projeto
+# (usuario.github.io/repositorio/) o robots.txt só é respeitado quando
+# está na RAIZ do domínio. Ele passa a valer de verdade ao publicar o
+# site em um domínio próprio (ex.: amandacarolinepsi.com.br).
+# ============================================================
+
+# --- Buscadores tradicionais ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# --- Bots de inteligência artificial ---
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (base de treino usada por vários modelos)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# --- Demais robôs ---
+User-agent: *
+Allow: /
+
+# Resumo em texto para agentes de IA:
+# https://ayrtonmoura1.github.io/psiamandacaroline/llms.txt
+
+Sitemap: https://ayrtonmoura1.github.io/psiamandacaroline/sitemap.xml
