@@ -6,6 +6,14 @@
       e referencie o caminho aqui (ex.: "conteudo/fotos/minha.jpg").
    ✅ Não precisa saber programar: altere apenas os textos
       entre aspas "..." e salve o arquivo.
+
+   ⚠️ IMPORTANTE — SEO e bots de IA
+      Buscadores (Google, Bing) e bots de IA (ChatGPT, Claude, Perplexity,
+      Gemini) NÃO executam JavaScript. Por isso o index.html traz uma
+      cópia estática dos mesmos textos, escrita direto no HTML — é ela que
+      esses robôs leem. Ao alterar um texto aqui, altere também o texto
+      correspondente no index.html (e, se for sobre serviços, no bloco
+      "application/ld+json" do <head>) para os dois ficarem iguais.
    ============================================================ */
 
 const CONTEUDO = {
@@ -22,7 +30,7 @@ const CONTEUDO = {
 
   // Descrição principal (hero)
   descricao:
-    "Acolhimento, escuta e cuidado baseado em evidências para crianças, adolescentes e mulheres em diferentes fases da vida — incluindo a maternidade e o puerpério.",
+    "Acolhimento, escuta e cuidado baseado em evidências para crianças, adolescentes e mulheres em diferentes fases da vida — incluindo a maternidade e o puerpério. Atendimento em Campo Grande – MS.",
 
   // Pequenos selos exibidos no hero
   chips: [
@@ -49,12 +57,31 @@ const CONTEUDO = {
   fotoPerfil: "conteudo/fotos/perfil.jpg",
   fotoSobre: "conteudo/fotos/perfil.jpg",
 
-  /* -------- Destaques (faixa sob o hero) -------- */
+  /* -------- Áreas de atuação (faixa sob o hero) --------
+     Antes estes itens flutuavam por cima da foto. Agora são texto de
+     verdade, lido por pessoas e por bots de IA. Mantenha igual ao
+     bloco <section id="atuacao"> do index.html. */
   destaques: [
-    { icone: "🧠", titulo: "Neuropsicologia", legenda: "avaliação e reabilitação" },
-    { icone: "🌱", titulo: "Infância & adolescência", legenda: "psicoterapia" },
-    { icone: "🤍", titulo: "Saúde mental materna", legenda: "puerpério & maternidade" },
-    { icone: "🎓", titulo: "Psicologia escolar", legenda: "orientação e palestras" }
+    {
+      icone: "🧠",
+      titulo: "Neuropsicologia",
+      texto: "Avaliação neuropsicológica e reabilitação cognitiva para crianças, adolescentes e adultos — atenção, memória, funções executivas e aprendizagem."
+    },
+    {
+      icone: "🌱",
+      titulo: "Infância e adolescência",
+      texto: "Psicoterapia infantil e de adolescentes, com orientação aos pais e cuidadores em questões emocionais, escolares e de comportamento."
+    },
+    {
+      icone: "🤍",
+      titulo: "Saúde mental materna",
+      texto: "Cuidado com gestantes e mães no puerpério e na maternidade atípica, incluindo ansiedade e depressão pós-parto."
+    },
+    {
+      icone: "🎓",
+      titulo: "Psicologia escolar",
+      texto: "Orientação a famílias e escolas sobre desenvolvimento e aprendizagem, além de palestras e formação para educadores."
+    }
   ],
 
   /* -------- Sobre -------- */
